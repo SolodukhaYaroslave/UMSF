@@ -1,0 +1,12 @@
+C:\Users\Acer\Documents\Ярослав\Visual\Git\Sort\bin\Debug\Sort.exe.config
+C:\Users\Acer\Documents\Ярослав\Visual\Git\Sort\bin\Debug\Sort.exe
+C:\Users\Acer\Documents\Ярослав\Visual\Git\Sort\bin\Debug\Sort.pdb
+C:\Users\Acer\Documents\Ярослав\Visual\Git\Sort\obj\Debug\Sort.csproj.AssemblyReference.cache
+C:\Users\Acer\Documents\Ярослав\Visual\Git\Sort\obj\Debug\Sort.csproj.SuggestedBindingRedirects.cache
+C:\Users\Acer\Documents\Ярослав\Visual\Git\Sort\obj\Debug\Sort.Sort.resources
+C:\Users\Acer\Documents\Ярослав\Visual\Git\Sort\obj\Debug\Sort.Properties.Resources.resources
+C:\Users\Acer\Documents\Ярослав\Visual\Git\Sort\obj\Debug\Sort.csproj.GenerateResource.cache
+C:\Users\Acer\Documents\Ярослав\Visual\Git\Sort\obj\Debug\Sort.csproj.CoreCompileInputs.cache
+C:\Users\Acer\Documents\Ярослав\Visual\Git\Sort\obj\Debug\Sort.exe
+C:\Users\Acer\Documents\Ярослав\Visual\Git\Sort\obj\Debug\Sort.pdb
+C:\Users\Acer\Documents\Ярослав\Visual\Git\Sort\obj\Debug\Sort.TypeSort.resources
