@@ -54,6 +54,31 @@ namespace Sort
             }
             return ChArray;
         }
+        public char[] Cocktail_Sort(char[] ChArray)
+        {
+            int st = 0, end = ChArray.Length - 1;
+            while (st +1 != end)
+            {
+                for (int j = st; j < end; j++)
+                {
+                    if (ChArray[j] > ChArray[j + 1])
+                    {
+                        ChArray = Swap(ChArray, j, j + 1);
+                    }
+                }
+                end--;
+                for (int j = end; j > st; j--)
+                {
+                    if (ChArray[j - 1] < ChArray[j])
+                    {
+                        ChArray = Swap(ChArray, j, j + 1);
+                    }
+                }
+                st++;
+            }
+
+            return ChArray;
+        }
         static char[] Swap(char[] ch, int in1, int in2)
         {
             char temp = ch[in1];

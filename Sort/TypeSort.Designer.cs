@@ -32,6 +32,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.rbSelection = new System.Windows.Forms.RadioButton();
             this.rbInsertion = new System.Windows.Forms.RadioButton();
+            this.rbCocktail = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // rbBubble
@@ -42,17 +43,20 @@
             this.rbBubble.Name = "rbBubble";
             this.rbBubble.Size = new System.Drawing.Size(146, 24);
             this.rbBubble.TabIndex = 0;
+            this.rbBubble.TabStop = true;
             this.rbBubble.Text = "Бульбашковий";
             this.rbBubble.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.Firebrick;
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button1.Location = new System.Drawing.Point(75, 226);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(140, 40);
             this.button1.TabIndex = 1;
             this.button1.Text = "Закрити";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // rbSelection
@@ -75,11 +79,23 @@
             this.rbInsertion.Text = "Сорт. вставкою";
             this.rbInsertion.UseVisualStyleBackColor = true;
             // 
+            // rbCocktail
+            // 
+            this.rbCocktail.AutoSize = true;
+            this.rbCocktail.Location = new System.Drawing.Point(60, 117);
+            this.rbCocktail.Name = "rbCocktail";
+            this.rbCocktail.Size = new System.Drawing.Size(206, 24);
+            this.rbCocktail.TabIndex = 4;
+            this.rbCocktail.Text = "Сорт. перемішуванням";
+            this.rbCocktail.UseVisualStyleBackColor = true;
+            // 
             // TypeSort
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(298, 284);
+            this.ControlBox = false;
+            this.Controls.Add(this.rbCocktail);
             this.Controls.Add(this.rbInsertion);
             this.Controls.Add(this.rbSelection);
             this.Controls.Add(this.button1);
@@ -100,5 +116,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.RadioButton rbSelection;
         private System.Windows.Forms.RadioButton rbInsertion;
+        private System.Windows.Forms.RadioButton rbCocktail;
     }
 }

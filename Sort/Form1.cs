@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Reflection.Emit;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,8 +14,9 @@ namespace Sort
 {
     public partial class Sort : Form
     {
+        AllTypeSort ATS = new AllTypeSort();
         TypeSort typeSort;
-        AllTypeSort Ats = new AllTypeSort();
+        public int numSort;
         public Sort()
         {
             InitializeComponent();
@@ -69,15 +71,35 @@ namespace Sort
 
         private void sort_Click(object sender, EventArgs e)
         {
+            if (dgvMass.Rows.Count == 0) bRandomArray_Click(sender, e);
             char[] MyArray = new char[dgvMass.Rows[0].Cells.Count];
             for (int i = 0; i < MyArray.Length; i++)
             {
                 MyArray[i] = char.Parse((string)dgvMass.Rows[0].Cells[i].Value);
             }
-            DateTime currentTime = DateTime.Now;
-            if (((RadioButton)typeSort.Controls["rbBubble"]).Checked) { MyArray = Ats.Bubble_Sort(MyArray); }
-            else if (((RadioButton)typeSort.Controls["rbSelection"]).Checked) { MyArray = Ats.Selection_Sort(MyArray); }
-            else if (((RadioButton)typeSort.Controls["rbInsertion"]).Checked) { MyArray = Ats.Insertion_Sort(MyArray); }
+            try { numSort = typeSort.numRes(); }
+            catch { numSort = 0; }
+
+            DateTime currentTime = DateTime.MinValue;
+            switch (numSort)
+            {
+                case 0:
+                    currentTime = DateTime.Now;
+                    MyArray = ATS.Bubble_Sort(MyArray);
+                    break;
+                case 1:
+                    currentTime = DateTime.Now;
+                    MyArray = ATS.Selection_Sort(MyArray);
+                    break;
+                case 2:
+                    currentTime = DateTime.Now;
+                    MyArray = ATS.Insertion_Sort(MyArray);
+                    break;
+                case 3:
+                    currentTime = DateTime.Now;
+                    MyArray = ATS.Cocktail_Sort(MyArray);
+                    break;
+            }
             labTime.Text = (DateTime.Now - currentTime).ToString();
 
                 richTextBox1.Clear();
@@ -91,6 +113,7 @@ namespace Sort
         private void bType_Click(object sender, EventArgs e)
         {
             typeSort.Show();
+            typeSort.Activate();
         }
     }
 }
