@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbDGV = new System.Windows.Forms.CheckBox();
             this.bRandomArray = new System.Windows.Forms.Button();
             this.bEmptyArray = new System.Windows.Forms.Button();
             this.tbNum = new System.Windows.Forms.TextBox();
@@ -49,6 +50,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbDGV);
             this.groupBox1.Controls.Add(this.bRandomArray);
             this.groupBox1.Controls.Add(this.bEmptyArray);
             this.groupBox1.Controls.Add(this.tbNum);
@@ -60,6 +62,18 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Генерація масива";
+            // 
+            // cbDGV
+            // 
+            this.cbDGV.AutoSize = true;
+            this.cbDGV.Checked = true;
+            this.cbDGV.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbDGV.Location = new System.Drawing.Point(10, 169);
+            this.cbDGV.Name = "cbDGV";
+            this.cbDGV.Size = new System.Drawing.Size(116, 24);
+            this.cbDGV.TabIndex = 5;
+            this.cbDGV.Text = "Using DGV";
+            this.cbDGV.UseVisualStyleBackColor = true;
             // 
             // bRandomArray
             // 
@@ -225,6 +239,7 @@
         private System.Windows.Forms.Button bType;
         private System.Windows.Forms.Label lab;
         private System.Windows.Forms.Label labTime;
+        private System.Windows.Forms.CheckBox cbDGV;
     }
 }
 
