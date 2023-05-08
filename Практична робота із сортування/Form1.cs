@@ -129,6 +129,11 @@ namespace Sort
                     currentTime = DateTime.Now;
                     MyArray = ATS.Cocktail_Sort(MyArray);
                     break;
+                case 4:
+                    //Швидке сортування
+                    currentTime = DateTime.Now;
+                    ATS.Quick_Sort(ref MyArray, 0, MyArray.Length -1);
+                    break;
             }
             labTime.Text = ((DateTime.Now - currentTime).TotalMilliseconds).ToString(); //Вирахування та виведення часу сортування
 

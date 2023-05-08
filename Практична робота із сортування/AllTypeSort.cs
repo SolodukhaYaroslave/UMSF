@@ -45,7 +45,7 @@ namespace Sort
             return ChArray;
         }
 
-        //Пренаступний елементі і встановлує його в положення у вже відсортовану частину
+        //Порівнює і встановлує його в положення у вже із відсортованими елементами
         public char[] Insertion_Sort(char[] ChArray)
         {
             for (int i = 1; i < ChArray.Length; i++)
@@ -98,6 +98,38 @@ namespace Sort
             }
 
             return ChArray;
+        }
+
+        //Спосіб швидкого сортування
+        public void Quick_Sort(ref char[] ChArray, int low, int high)
+        {
+            int i = low;
+            int j = high;
+            int pivot = ChArray[low];
+
+            while (i <= j)
+            {
+                while (ChArray[i] < pivot)
+                {
+                    i++;
+                }
+
+                while (ChArray[j] > pivot)
+                {
+                    j--;
+                }
+
+                if (i <= j)
+                {
+                    ChArray = Swap((char[])ChArray, i, j);
+                    i++;
+                    j--;
+                }
+            }
+
+            if (low < j) Quick_Sort(ref ChArray, low, j);
+
+            if (i < high) Quick_Sort(ref ChArray, i, high);
         }
         static char[] Swap(char[] ch, int in1, int in2)
         {

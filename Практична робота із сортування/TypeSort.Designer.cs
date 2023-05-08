@@ -33,6 +33,7 @@
             this.rbSelection = new System.Windows.Forms.RadioButton();
             this.rbInsertion = new System.Windows.Forms.RadioButton();
             this.rbCocktail = new System.Windows.Forms.RadioButton();
+            this.rbQuick = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // rbBubble
@@ -89,12 +90,23 @@
             this.rbCocktail.Text = "Сорт. перемішуванням";
             this.rbCocktail.UseVisualStyleBackColor = true;
             // 
+            // rbQuick
+            // 
+            this.rbQuick.AutoSize = true;
+            this.rbQuick.Location = new System.Drawing.Point(60, 147);
+            this.rbQuick.Name = "rbQuick";
+            this.rbQuick.Size = new System.Drawing.Size(184, 24);
+            this.rbQuick.TabIndex = 5;
+            this.rbQuick.Text = "Швидке сортування\r\n";
+            this.rbQuick.UseVisualStyleBackColor = true;
+            // 
             // TypeSort
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(298, 284);
             this.ControlBox = false;
+            this.Controls.Add(this.rbQuick);
             this.Controls.Add(this.rbCocktail);
             this.Controls.Add(this.rbInsertion);
             this.Controls.Add(this.rbSelection);
@@ -117,5 +129,6 @@
         private System.Windows.Forms.RadioButton rbSelection;
         private System.Windows.Forms.RadioButton rbInsertion;
         private System.Windows.Forms.RadioButton rbCocktail;
+        private System.Windows.Forms.RadioButton rbQuick;
     }
 }

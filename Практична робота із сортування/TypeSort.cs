@@ -30,6 +30,7 @@ namespace Sort
             else if (rbSelection.Checked) { num = 1; }
             else if (rbInsertion.Checked) { num = 2; }
             else if (rbCocktail.Checked)  { num = 3; }
+            else if (rbQuick.Checked) { num = 4; }
             return num;
         }
     }
