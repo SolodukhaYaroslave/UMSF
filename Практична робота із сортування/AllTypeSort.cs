@@ -33,7 +33,7 @@ namespace Sort
             for (int i = 0; i < ChArray.Length; i++)
             {
                 int minInd = i;
-                for (int j = i +1; j < ChArray.Length; j++)
+                for (int j = i + 1; j < ChArray.Length; j++)
                 {
                     if (ChArray[minInd] > ChArray[j])
                     {
@@ -90,13 +90,37 @@ namespace Sort
                 {
                     if (ChArray[j - 1] > ChArray[j])
                     {
-                        ChArray = Swap(ChArray, j, j -1);
+                        ChArray = Swap(ChArray, j, j - 1);
                         isSwapped = true;
                     }
                 }
                 st++;
             }
 
+            return ChArray;
+        }
+
+        //Використання шелла дуже схоже на звичайну перестановку, але робить кроки, що дозволяє пришвидшити сортування
+        public char[] Shell_Sort(char[] ChArray)
+        {
+            int Step(int s)
+            {
+                int b;
+                if (s % 2 == 0)
+                    b = (int)(9 * Math.Pow(2, s) - 9 * Math.Pow(2, s / 2) + 1);
+                else
+                    b = (int)(8 * Math.Pow(2, s) - 6 * Math.Pow(2, (s + 1) / 2) + 1);
+                return b;
+            }
+
+            int step = Step(ChArray.Length);
+            while (step > 0)
+            {
+                for (int i = 0; i < ChArray.Length - step; i++)
+                {
+
+                }
+            }
             return ChArray;
         }
 
