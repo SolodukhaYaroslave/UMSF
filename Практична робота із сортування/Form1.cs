@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace Sort
 {
@@ -106,41 +107,42 @@ namespace Sort
             catch { numSort = 0; }
 
             //Створення твймеру та розпорядження ма методи класу AllTypeSort відповідно до значення numSort
-            DateTime currentTime = DateTime.MaxValue;
+            Stopwatch st = new Stopwatch();
             switch (numSort)
             {
                 case 0:
                     //Бульбашкове сортування
-                    currentTime = DateTime.Now;
+                    st.Start();
                     MyArray = ATS.Bubble_Sort(MyArray);
                     break;
                 case 1:
                     //Сортування вибором
-                    currentTime = DateTime.Now;
+                    st.Start();
                     MyArray = ATS.Selection_Sort(MyArray);
                     break;
                 case 2:
                     //Вставне сортування
-                    currentTime = DateTime.Now;
+                    st.Start();
                     MyArray = ATS.Insertion_Sort(MyArray);
                     break;
                 case 3:
                     //Сортування пермішанням
-                    currentTime = DateTime.Now;
+                    st.Start();
                     MyArray = ATS.Cocktail_Sort(MyArray);
                     break;
                 case 4:
                     //Швидке сортування
-                    currentTime = DateTime.Now;
+                    st.Start();
                     ATS.Quick_Sort(ref MyArray, 0, MyArray.Length -1);
                     break;
                 case 5:
                     //Сортування Шелла
-                    currentTime = DateTime.Now;
+                    st.Start();
                     MyArray = ATS.Shell_Sort(MyArray);
                     break;
             }
-            labTime.Text = ((DateTime.Now - currentTime).TotalMilliseconds).ToString(); //Вирахування та виведення часу сортування
+            st.Stop();
+            labTime.Text = (st.Elapsed.TotalMilliseconds).ToString(); //Вирахування та виведення часу сортування
 
             //Виведення відсортованого масиву символів у richTextBox
             richTextBox1.Clear();
