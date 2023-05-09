@@ -141,7 +141,7 @@ namespace Sort
             richTextBox1.Clear();
             for (int i = 0; i < MyArray.Length; i++)
             {
-                richTextBox1.Text += MyArray[i] + " ";
+                richTextBox1.Text += MyArray[i] + "\v ";
             }
         }
 
