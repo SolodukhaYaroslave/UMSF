@@ -34,6 +34,7 @@
             this.rbInsertion = new System.Windows.Forms.RadioButton();
             this.rbCocktail = new System.Windows.Forms.RadioButton();
             this.rbQuick = new System.Windows.Forms.RadioButton();
+            this.rbShell = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // rbBubble
@@ -93,12 +94,22 @@
             // rbQuick
             // 
             this.rbQuick.AutoSize = true;
-            this.rbQuick.Location = new System.Drawing.Point(60, 147);
+            this.rbQuick.Location = new System.Drawing.Point(60, 177);
             this.rbQuick.Name = "rbQuick";
             this.rbQuick.Size = new System.Drawing.Size(184, 24);
             this.rbQuick.TabIndex = 5;
             this.rbQuick.Text = "Швидке сортування\r\n";
             this.rbQuick.UseVisualStyleBackColor = true;
+            // 
+            // rbShell
+            // 
+            this.rbShell.AutoSize = true;
+            this.rbShell.Location = new System.Drawing.Point(60, 147);
+            this.rbShell.Name = "rbShell";
+            this.rbShell.Size = new System.Drawing.Size(179, 24);
+            this.rbShell.TabIndex = 6;
+            this.rbShell.Text = "Сортування Шелла";
+            this.rbShell.UseVisualStyleBackColor = true;
             // 
             // TypeSort
             // 
@@ -106,6 +117,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(298, 284);
             this.ControlBox = false;
+            this.Controls.Add(this.rbShell);
             this.Controls.Add(this.rbQuick);
             this.Controls.Add(this.rbCocktail);
             this.Controls.Add(this.rbInsertion);
@@ -130,5 +142,6 @@
         private System.Windows.Forms.RadioButton rbInsertion;
         private System.Windows.Forms.RadioButton rbCocktail;
         private System.Windows.Forms.RadioButton rbQuick;
+        private System.Windows.Forms.RadioButton rbShell;
     }
 }
