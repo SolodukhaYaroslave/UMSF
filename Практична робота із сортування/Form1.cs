@@ -134,6 +134,11 @@ namespace Sort
                     currentTime = DateTime.Now;
                     ATS.Quick_Sort(ref MyArray, 0, MyArray.Length -1);
                     break;
+                case 5:
+                    //Сортування Шелла
+                    currentTime = DateTime.Now;
+                    MyArray = ATS.Shell_Sort(MyArray);
+                    break;
             }
             labTime.Text = ((DateTime.Now - currentTime).TotalMilliseconds).ToString(); //Вирахування та виведення часу сортування
 
@@ -141,7 +146,7 @@ namespace Sort
             richTextBox1.Clear();
             for (int i = 0; i < MyArray.Length; i++)
             {
-                richTextBox1.Text += MyArray[i] + "\v ";
+                richTextBox1.Text += MyArray[i] + " ";
             }
         }
 

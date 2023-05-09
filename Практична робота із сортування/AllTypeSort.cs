@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -103,23 +104,34 @@ namespace Sort
         //Використання шелла дуже схоже на звичайну перестановку, але робить кроки, що дозволяє пришвидшити сортування
         public char[] Shell_Sort(char[] ChArray)
         {
+            int index = 1;
+            while (Math.Pow(2, index - 1) < ChArray.Length)
+                index++;
             int Step(int s)
             {
-                int b;
-                if (s % 2 == 0)
-                    b = (int)(9 * Math.Pow(2, s) - 9 * Math.Pow(2, s / 2) + 1);
-                else
-                    b = (int)(8 * Math.Pow(2, s) - 6 * Math.Pow(2, (s + 1) / 2) + 1);
-                return b;
+                int d;
+                // Шелл
+                //d = (int) s / 2;
+
+                //Кнут
+                index--;
+                d = (int)Math.Pow(2, index) - 1;
+                return d;
             }
 
             int step = Step(ChArray.Length);
-            while (step > 0)
+            while (step >= 1)
             {
-                for (int i = 0; i < ChArray.Length - step; i++)
+                for (int i = step; i < ChArray.Length; i++)
                 {
-
+                    int j = i;
+                    while ((j >= step) && ChArray[j - step] > ChArray[j])
+                    {
+                        ChArray = Swap(ChArray, j - step, j);
+                        j -= step;
+                    }
                 }
+                step = Step(step);
             }
             return ChArray;
         }
