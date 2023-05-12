@@ -51,14 +51,19 @@ namespace Sort
         {
             for (int i = 1; i < ChArray.Length; i++)
             {
+                int index = i;
                 for (int j = i - 1; j >= 0; j--)
                 {
-                    if (ChArray[i] < ChArray[j])
+                    if (ChArray[j] > ChArray[i])
                     {
-                        Swap(ChArray, j, i);
-                        i = j;
+                        index = j;
                     }
                     else break;
+                }
+                if (index != i)
+                {
+                    ChArray = Swap(ChArray, index, i);
+                    i--;
                 }
             }
             return ChArray;
